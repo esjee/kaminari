@@ -14,8 +14,8 @@ module Kaminari
         num = 0 if num.negative?
 
         limit(default_per_page)  # Limit by the number of items we want per page
-          .offset(default_per_page * num)  # Get the items of the page we want
-          .extending do
+        .offset(default_per_page * num)  # Get the items of the page we want
+        .extending do
           include Kaminari::ActiveRecordRelationMethods
           include Kaminari::PageScopeMethods
         end
